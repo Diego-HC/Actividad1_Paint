@@ -22,13 +22,13 @@ def square(start, end):
     end_fill()
 
 def circulo(start, end):
-    up()
-    goto(start.x, start.y)
-    down()
-    radio = (end.x - start.x)
-    begin_fill()
-    circle(radio)
-    end_fill()
+    up() #Terminar con el dibujo anterior
+    goto(start.x, start.y) #Obtener las coordenadas del cursor
+    down() #Comenzar a pintar
+    radio = (end.x - start.x) #Calcular radio con las coordenadas del cursor
+    begin_fill() #Rellenar figura
+    circle(radio) #Función de la libreria
+    end_fill() #Dejar de rellenar
 
 def rectangle(start, end):
     "Draw rectangle from start to end."
