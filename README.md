@@ -6,4 +6,4 @@
 
 *Alejandro Fuentes Martínez* A00833118
 
-*Jose Eduardo Gomez Saldaña A00833968
+*Jose Eduardo Gomez Saldaña* A00833968
