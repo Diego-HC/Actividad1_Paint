@@ -50,14 +50,14 @@ def rectangle(start, end):
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    up()
-    goto(start.x, start.y)
-    down()
-    begin_fill()
-    for count in range(3):
-        forward((((end.x - start.x)**2) + ((end.y - start.y)**2))**(1/2))
-        left(120)
-    end_fill()
+    up() #Terminar con el dibujo anterior
+    goto(start.x, start.y) #Obtener las coordenadas del cursor
+    down() #Comenzar a pintar
+    begin_fill() #Comenzar a rellenar figura
+    for count in range(3): #Ciclo "for" para definir los 3 lados del triangulo
+        forward((((end.x - start.x)**2) + ((end.y - start.y)**2))**(1/2)) #Mover la linea "hacia el frente"
+        left(120) #Girar 120 grados a la izquierda
+    end_fill() #Terminar de rellenar la figura
 
 def tap(x, y):
     "Store starting point or draw shape."
