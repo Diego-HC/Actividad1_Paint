@@ -28,12 +28,17 @@ def circle(start, end):
 def rectangle(start, end):
     """Draw rectangle from start to end."""
     up()
+    #ir a las coordenadas donde se hizo el primer click
     goto(start.x, start.y)
     down()
     begin_fill()
+    #ciclo que se repite dos veces donde se dibujan dos de los lados del rectángulo
     for _ in range(2):
+        #Dibujar la arista horizontal 
         forward(end.x - start.x)
+        #girar
         left(90)
+        #Dibujar la arista vertical
         forward(end.y - start.y)
         left(90)
     end_fill()
