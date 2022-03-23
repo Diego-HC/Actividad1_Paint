@@ -4,4 +4,4 @@
 
 *Angel Gael Garcia Rangel* A00834718
 
-**
+*Jose Eduardo Gomez Saldaña* A00833968
