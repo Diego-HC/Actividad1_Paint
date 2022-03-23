@@ -21,17 +21,43 @@ def square(start, end):
 
     end_fill()
 
-def circle(start, end):
-    "Draw circle from start to end."
-    pass  # TODO
+def circulo(start, end):
+    up() #Terminar con el dibujo anterior
+    goto(start.x, start.y) #Obtener las coordenadas del cursor
+    down() #Comenzar a pintar
+    radio = (end.x - start.x) #Calcular radio con las coordenadas del cursor
+    begin_fill() #Rellenar figura
+    circle(radio) #Función de la libreria
+    end_fill() #Dejar de rellenar
 
 def rectangle(start, end):
-    "Draw rectangle from start to end."
-    pass  # TODO
+    """Draw rectangle from start to end."""
+    up()
+    #ir a las coordenadas donde se hizo el primer click
+    goto(start.x, start.y)
+    down()
+    begin_fill()
+    #ciclo que se repite dos veces donde se dibujan dos de los lados del rectángulo
+    for _ in range(2):
+        #Dibujar la arista horizontal 
+        forward(end.x - start.x)
+        #girar
+        left(90)
+        #Dibujar la arista vertical
+        forward(end.y - start.y)
+        left(90)
+    end_fill()
 
 def triangle(start, end):
     "Draw triangle from start to end."
-    pass  # TODO
+    up() #Terminar con el dibujo anterior
+    goto(start.x, start.y) #Obtener las coordenadas del cursor
+    down() #Comenzar a pintar
+    begin_fill() #Comenzar a rellenar figura
+    for count in range(3): #Ciclo "for" para definir los 3 lados del triangulo
+        forward((((end.x - start.x)**2) + ((end.y - start.y)**2))**(1/2)) #Mover la linea "hacia el frente"
+        left(120) #Girar 120 grados a la izquierda
+    end_fill() #Terminar de rellenar la figura
 
 def tap(x, y):
     "Store starting point or draw shape."
@@ -61,7 +87,7 @@ onkey(lambda: color('blue'), 'B')
 onkey(lambda: color('red'), 'R')
 onkey(lambda: store('shape', line), 'l')
 onkey(lambda: store('shape', square), 's')
-onkey(lambda: store('shape', circle), 'c')
+onkey(lambda: store('shape', circulo), 'c')
 onkey(lambda: store('shape', rectangle), 'r')
 onkey(lambda: store('shape', triangle), 't')
 done()
